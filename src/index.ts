@@ -10,6 +10,9 @@ async function main() {
     await AppDataSource.initialize();
     console.log("Data base running...");
 
+    // await AppDataSource.runMigrations();
+    // console.log("Migaration ok...");
+
     const dbConnection = new TypeORMConnection();
 
     const server = new ExpressServer(dbConnection);
