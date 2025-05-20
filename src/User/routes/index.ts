@@ -6,6 +6,7 @@ import { UserController } from "../controllers/userController";
 import { UserGateway } from "../gateways/userGateway";
 import { CreateUserValidator } from "../interfaces/dtos";
 import { UserJsonPresenter } from "../presenters/userPresenter";
+import { JWTToken } from "../../api/middlewares/jwtMiddleware";
 
 export const userRoutes = (dbConnection: DBConnection<any>): Router => {
   const router = Router();
@@ -211,9 +212,11 @@ export const userRoutes = (dbConnection: DBConnection<any>): Router => {
    *                       type: string
    *                       example: Detalhes do erro (apenas em desenvolvimento)
    */
-  router.get("/user/:cpf", async (req, res, next) => {
+  router.get("/user/:cpf", JWTToken, async (req, res, next) => {
     try {
-      const { cpf } = req.params;
+      console.log(req.query, "QUERY");
+
+      const { cpf } = req.query;
 
       if (typeof cpf !== "string") {
         throw new z.ZodError([
