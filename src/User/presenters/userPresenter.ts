@@ -3,7 +3,7 @@ import { User } from "../entities/user";
 import { UserResponseDTO } from "../interfaces/presenters";
 
 export class UserJsonPresenter
-  implements BaseDataPresenter<User, UserResponseDTO>
+  implements BaseDataPresenter<User, UserResponseDTO | string>
 {
   toJSON(user: User): UserResponseDTO {
     return {
@@ -15,15 +15,19 @@ export class UserJsonPresenter
   }
 
   toResponse(
-    data: User | null,
+    data: User | string | null,
     message?: string,
     isCreated?: boolean
-  ): APIResponse<UserResponseDTO> {
+  ): APIResponse<UserResponseDTO | string> {
     return {
       statusCode: isCreated ? 201 : 200,
       body: {
         message: message || "Operação realizada com sucesso",
-        response: data ? this.toJSON(data) : undefined,
+        response: data
+          ? typeof data === "string"
+            ? data
+            : this.toJSON(data)
+          : undefined,
       },
     };
   }
