@@ -212,7 +212,7 @@ export const userRoutes = (dbConnection: DBConnection<any>): Router => {
    *                       type: string
    *                       example: Detalhes do erro (apenas em desenvolvimento)
    */
-  router.get("/user/:cpf", JWTToken, async (req, res, next) => {
+  router.get("/user", JWTToken, async (req, res, next) => {
     try {
       console.log(req.query, "QUERY");
 
