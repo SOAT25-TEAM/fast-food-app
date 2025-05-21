@@ -10,13 +10,11 @@ export function JWTToken(req: Request, res: Response, next: NextFunction) {
 
   if (authHeader && authHeader.startsWith("Bearer ")) {
     const token = authHeader.split(" ")[1];
-    console.log(token, "TOKEN");
 
     try {
       const decoded = jwt.verify(token, SECRET);
-      console.log(decoded, "----", SECRET);
 
-      req.query.cpf = decoded;
+      req.query.params = decoded;
     } catch (err) {}
   }
 

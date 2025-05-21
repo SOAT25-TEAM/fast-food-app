@@ -214,9 +214,11 @@ export const userRoutes = (dbConnection: DBConnection<any>): Router => {
    */
   router.get("/user", JWTToken, async (req, res, next) => {
     try {
-      console.log(req.query, "QUERY");
+      console.log(req.query.params, "QUERY");
 
-      const { cpf } = req.query;
+      const { cpf } = req.query.params as any;
+
+      console.log(cpf, "BUCETA DE CPF");
 
       if (typeof cpf !== "string") {
         throw new z.ZodError([
