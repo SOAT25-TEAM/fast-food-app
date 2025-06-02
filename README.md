@@ -78,8 +78,7 @@ O GuardDuty fornece alertas detalhados (chamados de findings) que ajudam a respo
 de configurar ou manter infraestrutura adicional. Ativamos esse recurso para garantirmos as melhores práticas de segurança baseado no AWS 
 Well-Architected Framework é um conjunto de boas práticas criado pela Amazon Web Services para ajudar arquitetos de nuvem a projetar,
 construir e manter sistemas seguros, resilientes, eficientes e otimizados na nuvem.
-Ambiente de Banco de Dados
- 
+
  
 ## Amazon RDS
 O Amazon RDS for MySQL é um serviço gerenciado da AWS que permite criar, operar e escalar bancos de dados MySQL na nuvem com facilidade, 
