@@ -70,7 +70,7 @@ fornecendo um histórico detalhado de chamadas de API feitas por usuários, serv
 
 
 ## Guarddutty
-O Amazon GuardDuty é um serviço gerenciado de detecção inteligente de ameaças da AWS que monitora continuamente suas contas,
+O Amazon GuardDuty é um serviço gerenciado de detecção inteligente de ameaças da AWS que monitora continuamente nossas contas,
 workloads e dados para identificar atividades maliciosas ou comportamentos não autorizados. Ele analisa fontes como logs do CloudTrail, 
 registros de fluxo da VPC e consultas DNS, utilizando inteligência de ameaças, machine learning e análise comportamental para detectar sinais 
 de comprometimento, como uso de credenciais roubadas, mineração de criptomoedas, malware em instâncias EC2 ou acessos suspeitos ao S3. 
